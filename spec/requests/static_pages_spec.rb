@@ -8,9 +8,9 @@ describe "StaticPages" do
       visit '/static_pages/home'
       expect(page).to have_content('bitt3r')
     end
-    it "should have the title 'Home'" do
+    it "should have the title 'home'" do
       visit '/static_pages/home'
-      expect(page).to have_title("bitt3r | Home")
+      expect(page).to have_title("bitt3r | home")
     end
   end
   
@@ -21,7 +21,7 @@ describe "StaticPages" do
     end
     it "should have the title 'Help'" do
       visit '/static_pages/help'
-      expect(page).to have_title("bitt3r | Help")
+      expect(page).to have_title("bitt3r | help")
     end
   end
   
@@ -30,9 +30,9 @@ describe "StaticPages" do
       visit '/static_pages/about'
       expect(page).to have_content('about us')
     end
-    it "should have the title 'About Us'" do
+    it "should have the title 'about as'" do
       visit '/static_pages/about'
-      expect(page).to have_title("bitt3r | About Us")
+      expect(page).to have_title("bitt3r | about us")
     end
   end
   
