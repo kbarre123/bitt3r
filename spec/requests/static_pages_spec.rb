@@ -30,9 +30,20 @@ describe "StaticPages" do
       visit '/static_pages/about'
       expect(page).to have_content('about us')
     end
-    it "should have the title 'about as'" do
+    it "should have the title 'about us'" do
       visit '/static_pages/about'
       expect(page).to have_title("bitt3r | about us")
+    end
+  end
+  
+  describe "Contact page" do
+    it "should have the content 'contact us'" do
+      visit '/static_pages/contact'
+      expect(page).to have_content('contact us')
+    end
+    it "should have the title 'contact us'" do
+      visit '/static_pages/contact'
+      expect(page).to have_title("bitt3r | contact us")
     end
   end
   
