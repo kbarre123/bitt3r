@@ -11,6 +11,13 @@ gem 'bootstrap-sass', '2.3.2.0'
 # Password hashing gem
 gem 'bcrypt-ruby', '3.1.2'
 
+# Make test users
+gem 'faker', '1.1.2'
+
+# Pagination
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.8'
