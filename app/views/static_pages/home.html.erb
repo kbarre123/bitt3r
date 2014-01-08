@@ -1,6 +1,23 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>micropost feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
 <div class="center hero-unit">
   <h1>Welcome to bitt3r.</h1>
   <h2>Tired of those other social media sites that are clogged with old people and 'friends' that you hate?
       Then bitt3r was made just for you.</h2>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
+<% end %>
