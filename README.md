@@ -1,29 +1,25 @@
 README
 ===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample microblogging site from tutorial at [ruby.railstutorial.org](http://ruby.railstutorial.org/).
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+## System dependencies
 
-* Configuration
+## Configuration
 
-* Database creation
+## Database creation
+* Uncomment lib/tasks/sample_data.rake to populate db for testing. Otherwise, leave commented to have first
+user as admin.
+## Database initialization
 
-* Database initialization
+## How to run the test suite
 
-* How to run the test suite
+## Services (job queues, cache servers, search engines, etc.)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment instructions
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
