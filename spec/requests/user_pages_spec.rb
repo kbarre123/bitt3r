@@ -108,7 +108,58 @@ describe "User pages" do
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
     end
-  end
+    
+    describe "follow/unfollow buttons" do
+      let(:other_user) { FactoryGirl.create(:user) }
+      before { sign_in user }
+      
+      describe "following a user" do
+        before { visit user_path(other_user) }
+        
+        it "should increment the followed user count" do
+          expect do
+            click_button "follow"
+          end.to change(user.followed_users, :count).by(1)
+        end #should increment the followed user count
+        
+        it "should increment the other user's followers count" do
+          expect do
+            click_button "follow"
+          end.to change(other_user.followers, :count).by(1)
+        end #should increment the other user's followers count
+        
+        describe "toggling the button" do
+          before { click_button "follow" }
+          it { should have_xpath("//input[@value='unfollow']") }
+        end #toggling the button
+      end #following a user
+      
+      describe "unfollowing a user" do
+        before do
+          user.follow!(other_user)
+          visit user_path(other_user)
+        end
+        
+        it "shouldn't decrement the followed user count" do
+          expect do
+            click_button "unfollow"
+          end.to change(user.followed_users, :count).by(-1)
+        end #shouldn't increment the followed user count
+        
+        it "should decrement the other user's followers count" do
+          expect do
+            click_button "unfollow"
+          end.to change(other_user.followers, :count).by(-1)
+        end #should decrement the other user's followers count
+        
+        describe "toggling the button" do
+          before { click_button "unfollow" }
+          it { should have_xpath("//input[@value='follow']") }
+        end #toggling the button
+      end #following a user
+      
+    end #follow/unfollow buttons
+  end #profile page
   
   describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
@@ -146,6 +197,34 @@ describe "User pages" do
       it { should have_link('sign out', href: signout_path) }
       specify { expect(user.reload.name).to eq new_name }
       specify { expect(user.reload.email).to eq new_email }
+    end
+  end
+  
+  describe "following/followers" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:other_user) { FactoryGirl.create(:user) }
+    before { user.follow!(other_user) }
+    
+    describe "followed users" do
+      before do
+        sign_in user
+        visit following_user_path(user)
+      end
+      
+      it { should have_title(full_title('following')) }
+      it { should have_selector('h3', text: 'following') }
+      it { should have_link(other_user.name, href: user_path(other_user)) }
+    end
+    
+    describe "followers" do
+      before do
+        sign_in other_user
+        visit followers_user_path(other_user)
+      end
+      
+      it { should have_title(full_title('followers')) }
+      it { should have_selector('h3', text: 'followers') }
+      it { should have_link(user.name, href: user_path(user)) }
     end
   end
 end
