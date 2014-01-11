@@ -11,11 +11,11 @@ describe "Authentication" do
       before { click_button "sign in" }
     
       it {should have_title('sign in') }
-      it { should have_selector('div.alert.alert-error') }
+      it { should have_selector('div.alert.alert-danger') }
       
       describe "after visiting another page" do
         before { click_link "home" }
-        it { should_not have_selector('div.alert.alert-error') }
+        it { should_not have_selector('div.alert.alert-danger') }
       end #after visiting another page
     end #with invalid information
     
@@ -52,8 +52,8 @@ describe "Authentication" do
         
         describe "after signing in" do
           it "should render the desired protected pages" do
-            # For some reason, this fails even though the users#edit page has the proper title
-            #expect(page).to have_title('edit user')
+            #For some reason, this fails even though the users#edit page has the proper title
+            #it { should have_title('edit user') }
           end
         end
       end
@@ -114,7 +114,7 @@ describe "Authentication" do
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
       let (:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
-      before { sign_in user, no_capybara: true } # THIS IS BOUND TO FAIL ---------------------------!!!
+      before { sign_in user, no_capybara: true }
       
       describe "submitting a GET request to the Users#edit action" do
         before { get edit_user_path(wrong_user) }
