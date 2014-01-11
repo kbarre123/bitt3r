@@ -1,8 +1,6 @@
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
-$greyMediumLight: #eaeaea;
+/* mixins, variables, etc. */ 
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -17,7 +15,7 @@ html{
 }
 
 body {
-  padding-top: 60px;
+   padding-top: 70px;
 }
 
 section {
@@ -37,6 +35,12 @@ textarea {
 
 /* typography */
 
+.jumbotron {
+  h1 {
+    font-weight: bold;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -54,7 +58,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: #999999;
 }
 
 p {
@@ -70,7 +74,7 @@ p {
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
-  padding-top: 9px;
+  //padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -84,8 +88,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: $grayLight;
+  color: #D7D7D7;
   a {
     color: #555;
     &:hover {
@@ -110,7 +113,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid #eaeaea;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -140,7 +143,7 @@ aside {
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $grayLighter;
+    border-left: 1px solid #eaeaea;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -148,7 +151,7 @@ aside {
     }
     &:hover {
       text-decoration: none;
-      color: $blue;
+      color: blue;
     } 
   }
   strong {
@@ -195,12 +198,13 @@ input {
 .users {
   list-style: none;
   margin: 0;
+  padding: 0;
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid #eaeaea;
     &:last-child {
-      border-bottom: 1px solid $grayLighter
+      border-bottom: 1px solid #eaeaea;
     }
   }
 }
@@ -210,10 +214,11 @@ input {
 .microposts {
   list-style: none;
   margin: 10px 0 0 0;
+  padding: 0;
   
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #eaeaea;
   }
 }
 
@@ -222,7 +227,7 @@ input {
 }
 
 .timestamp {
-  color: $grayLight;
+  color: #c6c6c6;
 }
 
 .gravatar {

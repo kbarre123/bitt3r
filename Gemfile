@@ -6,7 +6,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 
 # Twitter Bootstrap with sass
-gem 'bootstrap-sass', '2.3.2.0'
+gem "bootstrap-sass", "~> 3.0.3.0"
 
 # Password hashing gem
 gem 'bcrypt-ruby', '3.1.2'
@@ -16,7 +16,8 @@ gem 'faker', '1.1.2'
 
 # Pagination
 gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
+# For Bootstrap 3.0.0
+gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -65,13 +66,13 @@ gem 'coffee-rails', '4.0.1'
 gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '3.0.4'
+gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '1.1.1'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '1.0.2'
+gem 'jbuilder', '1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

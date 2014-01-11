@@ -2,7 +2,9 @@
 <h1>sign in</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
     <%= form_for(:session, url: sessions_path) do |f| %>
       
       <%= f.label :email %>
@@ -13,7 +15,7 @@
     
       <%= f.submit "sign in", class: "btn btn-large btn-primary" %>
     <% end %>
-    
+    <br>
     <p>new user? <%= link_to "sign up now", signup_path %> and get bitt3r.</p>
   </div>
 </div>

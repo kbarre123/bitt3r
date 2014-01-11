@@ -1,6 +1,6 @@
 <% if signed_in? %>
   <div class="row">
-    <aside class="span4">
+    <aside class="col-md-4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -11,16 +11,16 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    <div class="span8">
+    <div class="col-md-8">
       <h3>my feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
-<div class="center hero-unit">
-  <h1>Welcome to bitt3r.</h1>
-  <h2>Tired of those other social media sites that are clogged with old people and 'friends' that you hate?
-      Then bitt3r was made just for you.</h2>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+  <div class="center jumbotron">
+    <h1>welcome to bitt3r.</h1>
+    <h2>tired of those other social media sites that are clogged with old people and 'friends' that you hate?
+        then bitt3r was made just for you.</h2>
+    <%= link_to "get bitt3r", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>
