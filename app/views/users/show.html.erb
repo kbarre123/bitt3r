@@ -2,17 +2,23 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
+      <%= gravatar_for @user, size: 56 %>
       <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>    
+      <section>
+        <div class="col-sm-6 col-md-6 first">
+          <%= render 'follow_form' if signed_in? %>
+        </div>
+      </section>
     </section>
+    
     <section>
       <%= render 'shared/stats' %>
     </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if signed_in? %>
+    <!--<%= render 'follow_form' if signed_in? %>-->
     <% if @user.microposts.any? %>
     <h3>posts (<%= @user.microposts.count %>)</h3>
     <ol class="microposts">

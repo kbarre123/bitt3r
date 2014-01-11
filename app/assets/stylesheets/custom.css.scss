@@ -118,6 +118,9 @@ aside {
       border: 0;
       padding-top: 0;
     }
+    &:nth-child(3) {
+      border: 0;
+    }  
     span {
       display: block;
       margin-bottom: 3px;
@@ -136,6 +139,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  padding-top: 10px 0 0 0;
 }
 
 .stats {
@@ -243,6 +247,10 @@ aside {
 }
 
 /* miscellaneous */
+
+.first {
+  padding-left: 0;
+}
 
 .debug_dump {
   clear: both;
