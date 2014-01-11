@@ -1,15 +1,19 @@
 <footer class="footer">
   <div class="container">
-    <hr>
-    <small>
-      <a href="https://bitt3r.herokuapp.com/">bitt3r</a>
-      by bogusbarrett
-    </small>
-    <ul>
-      <li><%= link_to "about", about_path %></li>
-      <li><%= link_to "contact", contact_path %></li>
-      <li><%= link_to "help", help_path %></li>
-    </ul>
-    <%= debug(params) if Rails.env.development? %>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+        <small>
+          <a href="https://bitt3r.herokuapp.com/">bitt3r</a>
+          by bogusbarrett
+        </small>
+        <ul>
+          <li><%= link_to "about", about_path %></li>
+          <li><%= link_to "contact", contact_path %></li>
+          <li><%= link_to "help", help_path %></li>
+        </ul>
+        <%= debug(params) if Rails.env.development? %>
+      </div>
+    </div>
   </div>
 </footer>
