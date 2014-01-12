@@ -24,6 +24,8 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
   # Use rspec for testing
   gem 'rspec-rails', '2.13.1'
+  # Better errors
+  gem 'better_errors'
 end
 
 group :test do
@@ -51,6 +53,9 @@ group :production do
   # Needed to serve static assets on Heroku
   gem 'rails_12factor', '0.0.2'
 end
+
+# NewRelic performance monitoring
+gem 'newrelic_rpm'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
