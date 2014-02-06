@@ -11,6 +11,8 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+.secret
+
 # Ignore New Reclic secret key file 
 /config/newrelic.yml
 
