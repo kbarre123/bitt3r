@@ -16,9 +16,6 @@
 # Ignore New Reclic secret key file 
 /config/newrelic.yml
 
-# Ignore secret token
-#/config/initializers/secret_token.rb
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
