@@ -9,7 +9,11 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Bitt3r::Application.config.secret_key_base = 'bdc09960f17a3a249fce94c69b41ebbb8dd9bfbce226679822cfe000d376699232e7cfa8412f9132a05ee8ebd34c49e63460cf7e6edd25a759a3ee7e71941c6b'
+Bitt3r::Application.config.secret_key_base = if Rails.env.development? or Rails.env.test?
+  ('x' * 30) # meets minimum requirement of 30 chars long
+else
+  ENV['SECRET_TOKEN']
+end
 
 require 'securerandom'
 
