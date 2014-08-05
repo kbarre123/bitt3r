@@ -55,7 +55,7 @@ group :production do
 end
 
 # NewRelic performance monitoring
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '>= 3.7.3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
